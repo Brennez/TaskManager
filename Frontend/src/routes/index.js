@@ -6,23 +6,12 @@ import Home from '../pages/homePage'
 import Task from '../pages/registerTask'
 import Profile from '../pages/profileUser'
 import TaskProfile from '../pages/taskProfile'
-import cartProfile from '../pages/cartProfile'
 import ControleRotas from './route'
-import contactPage from '../pages/contactPage'
 import bookList from '../pages/bookList'
 
-import UE from '../pages/updateEmail'
-import US from '../pages/updateSenha'
-import UT from '../pages/updateTelefone'
-import UNL from '../pages/updateNomeLivro'
-import UA from '../pages/updateAutor'
-import USL from '../pages/updateSinopse'
-import UCL from '../pages/updateCategoria'
-import UGL from '../pages/updateGenero'
-import UEL from '../pages/updateEdicao'
-import UIL from '../pages/updateImageUrl'
-import Update from '../pages/updateNome'
-import BookProfile from '../pages/taskProfile'
+import UNT from '../pages/updateNomeTarefa'
+
+// import Update from '../pages/updateNome'
 import BookDeleted from '../pages/bookDeleted'
 import BookSearched from '../pages/bookSearched'
 
@@ -50,12 +39,12 @@ function Routes() {
         isPrivate={true}
         component={Profile}
       ></ControleRotas>
-      <ControleRotas
+      {/* <ControleRotas
         path="/update"
         isPrivate={true}
         exact
         component={Update}
-      ></ControleRotas>
+      ></ControleRotas> */}
       <ControleRotas
         path="/book"
         isPrivate={true}
@@ -80,83 +69,12 @@ function Routes() {
         exact
         component={TaskProfile}
       ></ControleRotas>
+
       <ControleRotas
-        path="/cartProfile"
+        path="/updateTituloTarefa/:id"
         isPrivate={true}
         exact
-        component={cartProfile}
-      ></ControleRotas>
-      <ControleRotas
-        path="/contactPage/:id"
-        isPrivate={true}
-        exact
-        component={contactPage}
-      ></ControleRotas>
-      <ControleRotas
-        path="/bookProfile/:id"
-        isPrivate={true}
-        exact
-        component={BookProfile}
-      ></ControleRotas>
-      <ControleRotas
-        path="/updateEmail"
-        isPrivate={true}
-        exact
-        component={UE}
-      ></ControleRotas>
-      <ControleRotas
-        path="/updateSenha"
-        isPrivate={true}
-        exact
-        component={US}
-      ></ControleRotas>
-      <ControleRotas
-        path="/updateTelefone"
-        isPrivate={true}
-        exact
-        component={UT}
-      ></ControleRotas>
-      <ControleRotas
-        path="/updateAutor/:id"
-        isPrivate={true}
-        exact
-        component={UA}
-      ></ControleRotas>
-      <ControleRotas
-        path="/updateNomeLivro/:id"
-        isPrivate={true}
-        exact
-        component={UNL}
-      ></ControleRotas>
-      <ControleRotas
-        path="/updateSinopse/:id"
-        isPrivate={true}
-        exact
-        component={USL}
-      ></ControleRotas>
-      <ControleRotas
-        path="/updateCategoria/:id"
-        isPrivate={true}
-        exact
-        component={UCL}
-      ></ControleRotas>
-      <ControleRotas
-        path="/updateGenero/:id"
-        isPrivate={true}
-        exact
-        component={UGL}
-      ></ControleRotas>
-      <ControleRotas
-        path="/updateEdicao/:id"
-        isPrivate={true}
-        exact
-        component={UEL}
-      ></ControleRotas>
-      <ControleRotas
-        path="/updateImage/:id"
-        isPrivate={true}
-        exact
-        component={UIL}
+        component={UNT}
       ></ControleRotas>
     </Switch>
   )

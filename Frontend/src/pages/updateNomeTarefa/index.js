@@ -9,7 +9,7 @@ import left from '../../assets/left.png'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 
-function UpdateNomeLivro() {
+function UpdateTituloTarefa() {
   const formularioReferencia = useRef(null)
   const { id } = useParams()
 
@@ -17,13 +17,13 @@ function UpdateNomeLivro() {
     //Valida dos campos do formulário
     try {
       const esquema = Yup.object().shape({
-        nome: Yup.string().required('Você precisa digitar um título')
+        titulo: Yup.string().required('Você precisa digitar um título')
       })
       await esquema.validate(data, { abortEarly: false })
 
       //Faz a requisição da api e grava no banco de dados
-      const response = await api.put(`/updateNomeLivro/${id}`, {
-        nome: data.nome
+      const response = await api.put(`/updateTituloTarefa/${id}`, {
+        titulo: data.titulo
       })
       //Atuliza a pagina
       window.location.reload()
@@ -42,7 +42,7 @@ function UpdateNomeLivro() {
   //pegando os dados do backend
   const [data, setData] = useState([])
   useEffect(async () => {
-    const response = await api.get(`/getUmLivro/${id}`)
+    const response = await api.get(`/getUmaTarefa/${id}`)
     setData(response.data)
   }, [])
 
@@ -50,27 +50,25 @@ function UpdateNomeLivro() {
     <>
       <Logo>
         <div className="container">
-          <Link to={`/bookProfile/${id}`}>
+          {/* <Link to={`/bookProfile/${id}`}>
             {' '}
             <img className="exitButton" size="20px" src={left} alt="" />{' '}
-          </Link>
-          <img src={logo} alt="icon" />
+          </Link> */}
         </div>
       </Logo>
       <Container>
         <ContentForm>
           <Form ref={formularioReferencia} onSubmit={submeterFormulario}>
-            <h1 className="title">Editar</h1>
-            <h2>Título antigo</h2>
-            <p className="titulo" href="">
-              {data.nome}
-            </p>
-            <h2 className="tituloDoLivro">Novo título</h2>
-            <Input
-              name="nome"
-              type="text"
-              placeholder="Digite o nome do autor"
-            />
+            <h1 className="title">Editar título da tarefa</h1>
+            <div className="container">
+              <h2>Título antigo</h2>
+              <p className="titulo" href="">
+                {data.titulo}
+              </p>
+              <h2 className="tituloDoLivro">Novo título</h2>
+              <Input name="titulo" type="text" />
+            </div>
+
             <div className="contentButton">
               <button type="submit" className="botao" id="teste">
                 {' '}
@@ -79,10 +77,9 @@ function UpdateNomeLivro() {
             </div>
           </Form>
         </ContentForm>
-        <Image></Image>
       </Container>
     </>
   )
 }
 
-export default UpdateNomeLivro
+export default UpdateTituloTarefa

@@ -9,6 +9,7 @@ export const Logo = styled.div`
 `
 export const Container = styled.div`
   display: flex;
+  justify-content: center;
   height: 100vh;
   margin-left: 2rem;
 `
@@ -20,6 +21,12 @@ export const ContentForm = styled.div`
   max-width: 500px;
   margin-right: 5rem;
 
+  .container {
+    background-color: #461f69;
+    padding: 4rem;
+    border-radius: 0.5rem;
+  }
+
   h1 {
     margin-bottom: 1rem;
     font-family: 'Montserrat', sans-serif;
@@ -28,7 +35,7 @@ export const ContentForm = styled.div`
   }
 
   h2 {
-    color: rgba(32, 32, 40, 0.8);
+    color: white;
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
   }
@@ -94,8 +101,8 @@ export const ContentForm = styled.div`
     margin-bottom: 1rem;
     border: none;
     outline: none;
-    background: #9ba0fc;
-    color: black;
+    background: #461f69;
+    color: white;
     padding: 0.5rem;
     padding-right: 40%;
     box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.25);
@@ -106,7 +113,7 @@ export const ContentForm = styled.div`
   }
 
   button:hover {
-    background: ${shade(0.1, '#9ba0fc')};
+    background: ${shade(0.1, '#461f69')};
   }
 `
 

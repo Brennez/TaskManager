@@ -39,7 +39,7 @@ function TaskProfile() {
                 {data.titulo}
               </p>
               <div className="icon">
-                <Link to={`/updateNomeLivro/${id}`}>
+                <Link to={`/updateTituloTarefa/${id}`}>
                   <img src={pencil} alt="" />
                 </Link>
               </div>
