@@ -112,13 +112,17 @@ export const ContentBook = styled.div`
   }
 
   .item {
-    margin-right: 0.5rem;
+    margin-right: 1rem;
     background-color: white;
     border-radius: 0.5rem;
-    padding: 0.625rem;
+    padding: 2rem;
     /* width: 184.32px; */
-    width: 10rem;
+    width: 18rem;
     flex: none;
+  }
+
+  p {
+    margin: 1rem;
   }
 
   .item .conteudoItem {
@@ -206,17 +210,17 @@ export const About = styled.div`
   }
 `
 export const Footer = styled.div`
-  background-color: #9ba0fc;
+  background-color: #461f69;
   padding: 4rem;
   margin-top: 5rem;
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: rgba(32, 32, 40, 0.8);
+    color: white;
   }
   .container a {
-    color: rgba(32, 32, 40, 0.8);
+    color: white;
   }
 
   .container a img {

@@ -3,7 +3,7 @@ import { Switch } from 'react-router-dom'
 import Login from '../pages/loginPage'
 import Register from '../pages/registerPage'
 import Home from '../pages/homePage'
-import Book from '../pages/registerBook'
+import Task from '../pages/registerTask'
 import Profile from '../pages/profileUser'
 import cartList from '../pages/cartList'
 import cartProfile from '../pages/cartProfile'
@@ -41,9 +41,9 @@ function Routes() {
         component={Home}
       ></ControleRotas>
       <ControleRotas
-        path="/createLivro"
+        path="/createTask"
         isPrivate={true}
-        component={Book}
+        component={Task}
       ></ControleRotas>
       <ControleRotas
         path="/perfil"
@@ -62,13 +62,13 @@ function Routes() {
         exact
         component={bookList}
       ></ControleRotas>
-       <ControleRotas
+      <ControleRotas
         path="/bookDeleted/:id"
         isPrivate={true}
         exact
         component={BookDeleted}
       ></ControleRotas>
-       <ControleRotas
+      <ControleRotas
         path="/bookSearched"
         isPrivate={true}
         exact
@@ -80,7 +80,7 @@ function Routes() {
         exact
         component={cartList}
       ></ControleRotas>
-       <ControleRotas
+      <ControleRotas
         path="/cartProfile"
         isPrivate={true}
         exact

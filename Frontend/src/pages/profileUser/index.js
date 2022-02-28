@@ -4,7 +4,7 @@ import logo from '../../assets/logo.svg'
 import editor from '../../assets/editor.svg'
 import left from '../../assets/left.png'
 import api from '../../services/api'
-import { Header } from '../registerBook/styles'
+import { Header } from '../registerTask/styles'
 
 import { Link } from 'react-router-dom'
 

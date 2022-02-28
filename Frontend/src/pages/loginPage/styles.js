@@ -31,7 +31,7 @@ export const ContentForm = styled.div`
     p {
       font-family: 'Nunito', sans-serif;
       font-size: 1rem;
-      color: #444b59;
+      color: #461f69;
       margin-bottom: 4rem;
     }
     h2 {

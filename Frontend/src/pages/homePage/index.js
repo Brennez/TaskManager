@@ -6,15 +6,11 @@ import {
   Footer,
   Container,
   ContentBook,
-  Direction,
-  About
+  Direction
 } from './styles'
 
 import exit from '../../assets/iconLogout.svg'
-import logo from '../../assets/logo.svg'
-import logoFooter from '../../assets/logoFooter.svg'
-import home from '../../assets/homeImage.svg'
-import iconCart from '../../assets/iconCart.png'
+
 import left from '../../assets/left.png'
 import right from '../../assets/right.png'
 import git from '../../assets/iconGithub.svg'
@@ -35,7 +31,7 @@ function Home() {
 
   useEffect(async () => {
     // console.log('teste')
-    const response = await api.get('/getLivro')
+    const response = await api.get('/getTarefas')
     console.log(response.data)
     setData(response.data)
   }, [])
@@ -63,112 +59,62 @@ function Home() {
   return (
     <>
       <Header>
-        <div class="logo">
-          <img src={logo} alt="logo da empresa" />
-        </div>
-
         <ul class="menu">
           <li>
-            <Link to="/createLivro">
+            <Link to="/createTask">
               <a>Cadastrar</a>
             </Link>
-          </li>
-          <li>
-            <a href="#sobre"> Sobre</a>
           </li>
 
           <li>
             <Link to="/Book">
               {' '}
-              <a>Publicações</a>
-            </Link>
-          </li>
-          <form action="/bookSearched" className="containerSearch" method="get">
-              <img src={iconSearch} alt="" />
-            <input type="text" placeholder="Buscar..." class="searchInput" name="mySearch" />
-          </form>
-          <li>
-            <Link to="/cartProfile">
-              {' '}
-              <img src={iconCart} alt="Mycart" height={30} />
+              <a>Tarefas</a>
             </Link>
           </li>
           <li>
             <Link to="/perfil">
-              {' '}
-              {/* <a> Perfil</a> */}
-              <img src={avatar} alt="" />
+              <a> Perfil</a>
+              {/* <img src={avatar} alt="" /> */}
             </Link>
           </li>
           <li>
             <Link to="/login">
-              <a onClick={logoff}>
-                <img src={exit} alt="exit" height={30} />
-              </a>
+              <a onClick={logoff}>Sair</a>
             </Link>
           </li>
+          <form action="/bookSearched" className="containerSearch" method="get">
+            <img src={iconSearch} alt="" />
+            <input
+              type="text"
+              placeholder="Buscar..."
+              class="searchInput"
+              name="mySearch"
+            />
+          </form>
         </ul>
       </Header>
       <Body>
-        <Container>
-          <div class="conteudo">
-            <h1>O Freezer</h1>
-            <p>
-              Em nosso site você encontra um livro para todos os gostos. Uma
-              grande variedade de histórias interessantes.
-            </p>
-            <a href="#sobre">Saiba mais</a>
-          </div>
-          <div class="ilustracao">
-            <img src={home} alt="" />
-          </div>
-        </Container>
+        <Container></Container>
         {/* =========== CABEÇALHO DE LIVROS ============ */}
         <div className="cabecalho">
-          <h2>Livros disponíveis</h2>
-          <ul className="elementos">
-            <li>
-              {' '}
-              <a href="#"> Ficcão</a>
-            </li>
-            <li>
-              {' '}
-              <a href="#"> Romance</a>
-            </li>
-            <li>
-              {' '}
-              <a href="#"> Drama</a>
-            </li>
-            <li>
-              {' '}
-              <a href="#"> Suspense</a>
-            </li>
-            <li>
-              {' '}
-              <a href="#"> Terror</a>
-            </li>
-            <li>
-              {' '}
-              <a href="#"> Fantasia</a>
-            </li>
-          </ul>
+          <h2>Suas Tarefas</h2>
+          <ul className="elementos"></ul>
         </div>
 
         <ContentBook ref={referencia}>
           {data.map(item => {
-            const { id, autor, nome, imageurl } = item
+            const { titulo, descricao, tipo, dt_limite, categoria, id } = item
             return (
               <div className="item">
-                <div className="conteudoItem">
-                  <img src={imageurl} className="imageItem" />
-                  <div className="info">
-                    <p className="titulo"> {nome}</p>
-                    <p className="autor"> {autor}</p>
-                    <div className="botao">
-                      <Link to={`/cartList/${id}`}>Adicionar</Link>
-                      {/* <img clasname="icon" src={icon} alt="icone fav" /> */}
-                    </div>
-                  </div>
+                <div className="info">
+                  <p className="titulo"> Título: {titulo}</p>
+                  <p className="descricao"> Descrição: {descricao}</p>
+                  <p className="data"> Data: {dt_limite}</p>
+                  <p className="categoria"> Categoria: {categoria}</p>
+                  {/* <div className="botao">
+                    <Link to={`/cartList/${id}`}>Adicionar</Link>
+                  </div> */}
                 </div>
               </div>
             )
@@ -188,23 +134,9 @@ function Home() {
           </button>
         </div>
       </Direction>
-      <About id="sobre">
-        <div className="conteudo">
-          <h2>Nossa História</h2>
-          <p>
-            Freezer Point, inspirado na “gelateca” da Uespi que oferece um ponto
-            de coleta para livros e revistas que
-            <br /> deseja fazer a doação para a comunidade. O nosso site fornece
-            uma maneira intuitiva e eficiente para o usuário
-            <br /> fazer a doação de livros, estabelecendo a conexão entre
-            leitores e os livros.
-          </p>
-        </div>
-      </About>
 
       <Footer>
         <div className="container">
-          <img src={logoFooter} alt="logoRodape" />
           <p className="nome">
             UESPI, Campus
             <br />
@@ -215,7 +147,7 @@ function Home() {
             <br />
             Fale conosco
           </p>
-          <a href="https://github.com/Brennez/FreezerPoint">
+          <a href="https://github.com/Brennez/TaskManager">
             <img src={git} alt="" height={100} width={100} />
           </a>
         </div>
