@@ -112,9 +112,9 @@ function Home() {
                   <p className="descricao"> Descrição: {descricao}</p>
                   <p className="data"> Data: {dt_limite}</p>
                   <p className="categoria"> Categoria: {categoria}</p>
-                  {/* <div className="botao">
-                    <Link to={`/cartList/${id}`}>Adicionar</Link>
-                  </div> */}
+                  <div className="botao">
+                    <Link to={`/TaskProfile/${id}`}>Editar</Link>
+                  </div>
                 </div>
               </div>
             )

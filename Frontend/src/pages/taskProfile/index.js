@@ -2,14 +2,14 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Container, ContentForm, Image, Logo } from './styles'
 import logo from '../../assets/logo.svg'
 import editorIcon from '../../assets/editor.svg'
-import editor from '../../assets/editor.svg'
+import pencil from '../../assets/pencil.png'
 import left from '../../assets/left.png'
 import api from '../../services/api'
 import { useParams } from 'react-router-dom'
 
 import { Link } from 'react-router-dom'
 
-function BookProfile() {
+function TaskProfile() {
   const [data, setData] = useState([])
   const referencia = useRef(null)
   // const history = useHistory()
@@ -19,7 +19,7 @@ function BookProfile() {
   // console.log(id)
 
   useEffect(async () => {
-    const response = await api.get(`/getUmLivro/${id}`)
+    const response = await api.get(`/getUmaTarefa/${id}`)
     setData(response.data)
   }, [])
 
@@ -27,101 +27,74 @@ function BookProfile() {
 
   return (
     <>
-      <Logo>
-        <div className="container">
-          <Link to="/Home">
-            {' '}
-            <img className="exitButton" size="20px" src={left} alt="" />{' '}
-          </Link>
-          <img src={logo} alt="icon" />
-        </div>
-      </Logo>
+      {/* <Logo></Logo> */}
       <Container>
         <ContentForm ref={referencia}>
+          <h1>Minha Tarefa</h1>
+
           <div>
-            <h1 className="title">Meu livro</h1>
-            <h2>Nome</h2>
+            <h2>Título</h2>
             <div className="containerName">
               <p className="nome" href="">
-                {data.nome}
+                {data.titulo}
               </p>
               <div className="icon">
                 <Link to={`/updateNomeLivro/${id}`}>
-                  <img src={editor} alt="" />
+                  <img src={pencil} alt="" />
                 </Link>
               </div>
             </div>
-            <h2>Autor</h2>
+            <h2>Descrição</h2>
             <div className="containerAutor">
               <p className="autor" href="">
-                {data.autor}
+                {data.descricao}
               </p>
               <div className="icon">
                 <Link to={`/updateAutor/${id}`}>
-                  <img src={editor} alt="" />
+                  <img src={pencil} alt="" />
                 </Link>
               </div>
             </div>
-            <h2 id="tituloSinopse">Sinopse</h2>
+            <h2 id="tituloSinopse">Tipo</h2>
             <div className="containerSinopse">
               <p className="sinopse" href="">
-                {data.sinopse}
+                {data.tipo}
               </p>
               <div className="icon">
                 <Link to={`/updateSinopse/${id}`}>
-                  <img src={editor} alt="" />
+                  <img src={pencil} alt="" />
                 </Link>
               </div>
             </div>
             {/* Fim container
              */}
-            <h2 id="tituloCategoria">Categoria</h2>
+            <h2 id="tituloCategoria">Data Limite</h2>
             <div className="containerCategoria">
               <p className="categoria" href="">
-                {data.categoria}
+                {data.dt_limite}
               </p>
               <div className="icon">
                 <Link to={`/updateCategoria/${id}`}>
-                  <img src={editor} alt="" />
+                  <img src={pencil} alt="" />
                 </Link>
               </div>
             </div>
-            <h2 id="tituloGenero">Gênero</h2>
+            <h2 id="tituloGenero">Categoria</h2>
             <div className="containerGenero">
               <p className="genero" href="">
-                {data.genero}
+                {data.categoria}
               </p>
               <div className="icon">
                 <Link to={`/updateGenero/${id}`}>
-                  <img src={editor} alt="" />
-                </Link>
-              </div>
-            </div>
-            <h2 id="tituloEdicao">Edição</h2>
-            <div className="containerEdicao">
-              <p className="edicao" href="">
-                {data.edicao}
-              </p>
-              <div className="icon">
-                <Link to={`/updateEdicao/${id}`}>
-                  <img src={editor} alt="" />
+                  <img src={pencil} alt="" />
                 </Link>
               </div>
             </div>
           </div>
         </ContentForm>
-        <Link to={`/updateImage/${id}`}>
-          <div className="containerItem">
-            <div className="item">
-              <div className="conteudoItem">
-                <img src={data.imageurl} className="imageItem" />
-              </div>
-            </div>
-          </div>
-        </Link>
       </Container>
     </>
   )
 }
 
-export default BookProfile
+export default TaskProfile

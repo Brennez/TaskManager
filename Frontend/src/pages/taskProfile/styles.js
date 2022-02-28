@@ -2,13 +2,15 @@ import styled from 'styled-components'
 import image from '../../assets/image.svg'
 
 export const Logo = styled.div`
-  .container {
-    display: flex;
-  }
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 `
 
 export const Container = styled.div`
   display: flex;
+  justify-content: center;
+
   height: 100vh;
   margin-left: 2rem;
   align-items: center;
@@ -42,9 +44,12 @@ export const Container = styled.div`
 
 export const ContentForm = styled.div`
   display: flex;
+  padding: 2rem;
   flex-direction: column;
+  border-radius: 0.5rem;
   place-content: center;
   width: 100%;
+  background-color: #461f69;
   max-width: 500px;
   margin-right: 5rem;
 
@@ -52,11 +57,11 @@ export const ContentForm = styled.div`
     margin-bottom: 1rem;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
-    color: rgba(32, 32, 40, 0.8);
+    color: white;
   }
 
   h2 {
-    color: rgba(32, 32, 40, 0.8);
+    color: white;
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
   }

@@ -5,7 +5,7 @@ import Register from '../pages/registerPage'
 import Home from '../pages/homePage'
 import Task from '../pages/registerTask'
 import Profile from '../pages/profileUser'
-import cartList from '../pages/cartList'
+import TaskProfile from '../pages/taskProfile'
 import cartProfile from '../pages/cartProfile'
 import ControleRotas from './route'
 import contactPage from '../pages/contactPage'
@@ -22,7 +22,7 @@ import UGL from '../pages/updateGenero'
 import UEL from '../pages/updateEdicao'
 import UIL from '../pages/updateImageUrl'
 import Update from '../pages/updateNome'
-import BookProfile from '../pages/bookProfile'
+import BookProfile from '../pages/taskProfile'
 import BookDeleted from '../pages/bookDeleted'
 import BookSearched from '../pages/bookSearched'
 
@@ -75,10 +75,10 @@ function Routes() {
         component={BookSearched}
       ></ControleRotas>
       <ControleRotas
-        path="/cartList/:id"
+        path="/TaskProfile/:id"
         isPrivate={true}
         exact
-        component={cartList}
+        component={TaskProfile}
       ></ControleRotas>
       <ControleRotas
         path="/cartProfile"
