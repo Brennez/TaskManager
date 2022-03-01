@@ -13,7 +13,7 @@ import UNT from '../pages/updateNomeTarefa'
 
 // import Update from '../pages/updateNome'
 import BookDeleted from '../pages/bookDeleted'
-import BookSearched from '../pages/bookSearched'
+import taskSearched from '../pages/taskSearched'
 
 // import ControleDeRotas from "./route";
 
@@ -58,10 +58,10 @@ function Routes() {
         component={BookDeleted}
       ></ControleRotas>
       <ControleRotas
-        path="/bookSearched"
+        path="/taskSearched"
         isPrivate={true}
         exact
-        component={BookSearched}
+        component={taskSearched}
       ></ControleRotas>
       <ControleRotas
         path="/TaskProfile/:id"

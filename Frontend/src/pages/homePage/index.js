@@ -15,7 +15,6 @@ import left from '../../assets/left.png'
 import right from '../../assets/right.png'
 import git from '../../assets/iconGithub.svg'
 import api from '../../services/api'
-import avatar from '../../assets/avatar.png'
 import { useContextAutenticacao } from '../../context/autenticacao'
 import iconSearch from '../../assets/searchIcon.png'
 
@@ -52,7 +51,7 @@ function Home() {
   if (!data)
     return (
       <div>
-        <h2>Sem livros por enquanto</h2>
+        <h2>Sem tarefas por enquanto</h2>
       </div>
     )
 
@@ -83,7 +82,7 @@ function Home() {
               <a onClick={logoff}>Sair</a>
             </Link>
           </li>
-          <form action="/bookSearched" className="containerSearch" method="get">
+          <form action="/taskSearched" className="containerSearch" method="get">
             <img src={iconSearch} alt="" />
             <input
               type="text"

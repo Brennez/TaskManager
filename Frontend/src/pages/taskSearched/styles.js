@@ -5,6 +5,7 @@ import image from '../../assets/image.svg'
 
 export const Container = styled.div`
   display: flex;
+  align-items: center;
   margin-right: 4.6rem;
   margin-left: 12.938rem;
 `
@@ -59,7 +60,14 @@ export const Body = styled.div`
     margin-bottom: 1rem;
     font-family: 'Montserrat', sans-serif;
     font-size: 4rem;
-    color: rgba(32, 32, 40, 0.8);
+    /* color: #461f69; */
+  }
+
+  .title {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    color: #461f69;
   }
 
   .conteudo p {
@@ -105,8 +113,8 @@ export const ContentBook = styled.div`
   margin-left: 13.438rem;
   margin-right: 13.438rem;
   margin-top: 2rem;
-  display: flex;
-  overflow-x: auto;
+  /* display: flex; */
+  /* overflow-x: auto; */
   scroll-behavior: smooth;
 
   ::-webkit-scrollbar {
@@ -114,13 +122,19 @@ export const ContentBook = styled.div`
   }
 
   .item {
+    display: block;
+    padding: 2rem;
     margin-right: 0.5rem;
-    background-color: white;
-    border-radius: 0.5rem;
-    padding: 0.625rem;
-    /* width: 184.32px; */
-    width: 10rem;
+    background-color: #461f69;
+    border-radius: 1rem;
+
+    width: 90%;
     flex: none;
+
+    p {
+      color: white;
+      margin: 1rem;
+    }
   }
 
   .item .conteudoItem {
