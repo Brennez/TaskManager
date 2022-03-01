@@ -66,12 +66,6 @@ function Home() {
           </li>
 
           <li>
-            <Link to="/Book">
-              {' '}
-              <a>Tarefas</a>
-            </Link>
-          </li>
-          <li>
             <Link to="/perfil">
               <a> Perfil</a>
               {/* <img src={avatar} alt="" /> */}
@@ -112,7 +106,9 @@ function Home() {
                   <p className="data"> Data: {dt_limite}</p>
                   <p className="categoria"> Categoria: {categoria}</p>
                   <div className="botao">
-                    <Link to={`/TaskProfile/${id}`}>Editar</Link>
+                    <Link className="texto" to={`/TaskProfile/${id}`}>
+                      Editar
+                    </Link>
                   </div>
                 </div>
               </div>

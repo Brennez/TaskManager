@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Container, ContentForm, Image, Logo } from './styles'
-import logo from '../../assets/logo.svg'
 import editor from '../../assets/editor.svg'
 import left from '../../assets/left.png'
 import api from '../../services/api'
@@ -22,26 +21,23 @@ function Profile() {
     <>
       <Logo>
         <div className="container">
-          <Link to="/Home">
+          {/* <Link to="/Home">
             {' '}
             <img className="exitButton" size="20px" src={left} alt="" />{' '}
-          </Link>
-          <img src={logo} alt="icon" />
+          </Link> */}
         </div>
       </Logo>
       <Container>
         <ContentForm ref={referencia}>
-          <div>
-            <h1 className="title">Perfil</h1>
+          <div className="informacoes">
+            <h1 className="title">Meu perfil</h1>
             <h2>Nome</h2>
             <div className="containerName">
               <p className="nome" href="">
                 {data.nome}
               </p>
               <div className="icon">
-                <Link to="/update">
-                  <img src={editor} alt="" />
-                </Link>
+                <Link to="/update"></Link>
               </div>
             </div>
             <h2>Email</h2>
@@ -49,13 +45,6 @@ function Profile() {
               <p className="email" href="">
                 {data.email}
               </p>
-              <div className="icon">
-                <a href="">
-                  <Link to="/updateEmail">
-                    <img src={editor} alt="" />
-                  </Link>
-                </a>
-              </div>
             </div>
             <h2 id="tituloSenha">Senha</h2>
             <div className="containerSenha">
@@ -65,28 +54,12 @@ function Profile() {
               </p>
               <div className="icon">
                 <a href="">
-                  <Link to="/updateSenha">
-                    <img src={editor} alt="" />
-                  </Link>
-                </a>
-              </div>
-            </div>
-            <h2 id="tituloTelefone">Telefone</h2>
-            <div className="containerTelefone">
-              <p className="telefone" href="">
-                {data.telefone}
-              </p>
-              <div className="icon">
-                <a href="">
-                  <Link to="/updateTelefone">
-                    <img src={editor} alt="" />
-                  </Link>
+                  <Link to="/updateSenha"></Link>
                 </a>
               </div>
             </div>
           </div>
         </ContentForm>
-        <Image></Image>
       </Container>
     </>
   )

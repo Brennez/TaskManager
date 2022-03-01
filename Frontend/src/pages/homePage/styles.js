@@ -81,7 +81,7 @@ export const Body = styled.div`
     align-items: center;
     justify-content: space-between;
     h2 {
-      color: rgba(32, 32, 40, 0.8);
+      color: #461f69;
       font-size: 1.563rem;
       font-family: 900, 'Montserrat', sans-serif;
     }
@@ -113,7 +113,8 @@ export const ContentBook = styled.div`
 
   .item {
     margin-right: 1rem;
-    background-color: white;
+    background-color: #461f69;
+    padding: 1rem;
     border-radius: 0.5rem;
     padding: 2rem;
     /* width: 184.32px; */
@@ -123,6 +124,7 @@ export const ContentBook = styled.div`
 
   p {
     margin: 1rem;
+    color: white;
   }
 
   .item .conteudoItem {
@@ -130,24 +132,9 @@ export const ContentBook = styled.div`
     justify-content: center;
   }
 
-  .item .conteudoItem .imageItem {
-    /* width: 100px;
-    height:100px; */
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
   .item .conteudoItem .info {
     margin-top: 0.688rem;
     font-family: 700, 'Montserrat', sans-serif;
-  }
-
-  .item .conteudoItem .info .preco {
-    margin-bottom: 1.125rem;
-    color: rgba(32, 32, 40, 0.8);
-    font-style: bold;
-    font-size: 1.125rem;
   }
 
   .item .conteudoItem .info .titulo {
@@ -155,18 +142,14 @@ export const ContentBook = styled.div`
     color: rgba(32, 32, 40, 0.8);
   }
 
-  .item .conteudoItem .info .autor {
-    font-family: 400, 'Montserrat', sans-serif;
-    color: rgba(32, 32, 40, 0.8);
-    margin-top: 5px;
-    font-size: 0.9rem;
-  }
-
-  .conteudoItem .botao {
+  .item .botao {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 1.75rem;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 00.5rem;
   }
 
   .conteudoItem .botao a {

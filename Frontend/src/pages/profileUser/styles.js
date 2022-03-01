@@ -9,6 +9,8 @@ export const Logo = styled.div`
 
 export const Container = styled.div`
   display: flex;
+  justify-content: center;
+
   height: 100vh;
   margin-left: 2rem;
 `
@@ -25,17 +27,25 @@ export const ContentForm = styled.div`
     margin-bottom: 1rem;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
-    color: rgba(32, 32, 40, 0.8);
+    color: white;
   }
 
   h2 {
-    color: rgba(32, 32, 40, 0.8);
+    color: white;
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
   }
 
   .containerName {
     display: flex;
+  }
+
+  .informacoes {
+    align-items: center;
+    flex-direction: column;
+    background-color: #461f69;
+    border-radius: 0.5rem;
+    padding: 2rem;
   }
 
   .nome {
