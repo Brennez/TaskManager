@@ -7,7 +7,7 @@ import * as Yup from 'yup'
 import Input from '../../components/input'
 import { useParams } from 'react-router-dom'
 
-function UpdateTituloTarefa() {
+function UpdateDataTarefa() {
   const formularioReferencia = useRef(null)
   const { id } = useParams()
 
@@ -15,13 +15,13 @@ function UpdateTituloTarefa() {
     //Valida dos campos do formulário
     try {
       const esquema = Yup.object().shape({
-        titulo: Yup.string().required('Você precisa digitar um título')
+        dt_limite: Yup.string().required('Você precisa digitar uma data')
       })
       await esquema.validate(data, { abortEarly: false })
 
       //Faz a requisição da api e grava no banco de dados
-      const response = await api.put(`/updateTituloTarefa/${id}`, {
-        titulo: data.titulo
+      const response = await api.put(`/updateDataLimite/${id}`, {
+        dt_limite: data.dt_limite
       })
       //Atuliza a pagina
       window.location.reload()
@@ -57,14 +57,14 @@ function UpdateTituloTarefa() {
       <Container>
         <ContentForm>
           <Form ref={formularioReferencia} onSubmit={submeterFormulario}>
-            <h1 className="title">Editar título da tarefa</h1>
+            <h1 className="title">Editar data da tarefa</h1>
             <div className="container">
-              <h2>Título antigo</h2>
+              <h2>Data antiga</h2>
               <p className="titulo" href="">
-                {data.titulo}
+                {data.dt_limite}
               </p>
-              <h2 className="tituloDoLivro">Novo título</h2>
-              <Input name="titulo" type="text" />
+              <h2 className="tituloDoLivro">Nova Data</h2>
+              <Input name="dt_limite" type="text" />
             </div>
 
             <div className="contentButton">
@@ -80,4 +80,4 @@ function UpdateTituloTarefa() {
   )
 }
 
-export default UpdateTituloTarefa
+export default UpdateDataTarefa

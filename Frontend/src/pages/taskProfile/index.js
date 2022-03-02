@@ -50,7 +50,7 @@ function TaskProfile() {
                 {data.descricao}
               </p>
               <div className="icon">
-                <Link to={`/updateAutor/${id}`}>
+                <Link to={`/updateDescricaoTarefa/${id}`}>
                   <img src={pencil} alt="" />
                 </Link>
               </div>
@@ -61,7 +61,7 @@ function TaskProfile() {
                 {data.tipo}
               </p>
               <div className="icon">
-                <Link to={`/updateSinopse/${id}`}>
+                <Link to={`/updateTipo/${id}`}>
                   <img src={pencil} alt="" />
                 </Link>
               </div>
@@ -74,18 +74,7 @@ function TaskProfile() {
                 {data.dt_limite}
               </p>
               <div className="icon">
-                <Link to={`/updateCategoria/${id}`}>
-                  <img src={pencil} alt="" />
-                </Link>
-              </div>
-            </div>
-            <h2 id="tituloGenero">Categoria</h2>
-            <div className="containerGenero">
-              <p className="genero" href="">
-                {data.categoria}
-              </p>
-              <div className="icon">
-                <Link to={`/updateGenero/${id}`}>
+                <Link to={`/updateData/${id}`}>
                   <img src={pencil} alt="" />
                 </Link>
               </div>
