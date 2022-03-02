@@ -11,8 +11,8 @@ import {
 
 import exit from '../../assets/iconLogout.svg'
 
-import left from '../../assets/left.png'
-import right from '../../assets/right.png'
+import left from '../../assets/arrow-left.png'
+import right from '../../assets/arrow-right.png'
 import git from '../../assets/iconGithub.svg'
 import api from '../../services/api'
 import { useContextAutenticacao } from '../../context/autenticacao'

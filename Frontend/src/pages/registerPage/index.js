@@ -1,7 +1,6 @@
 import React, { useRef } from 'react'
-import { Container, ContentForm, Image, Logo } from './styles'
+import { Container, ContentForm, Logo } from './styles'
 import { Form } from '@unform/web'
-import logo from '../../assets/logo.svg'
 import Input from '../../components/input'
 import api from '../../services/api'
 import * as Yup from 'yup'

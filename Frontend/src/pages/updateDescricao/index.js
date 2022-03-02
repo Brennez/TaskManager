@@ -5,6 +5,8 @@ import { Form } from '@unform/web'
 import * as Yup from 'yup'
 import Input from '../../components/input'
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import left from '../../assets/arrow-left.png'
 
 function UpdateDescricaoTarefa() {
   const formularioReferencia = useRef(null)
@@ -47,10 +49,10 @@ function UpdateDescricaoTarefa() {
     <>
       <Logo>
         <div className="container">
-          {/* <Link to={`/bookProfile/${id}`}>
+          <Link to={`/taskProfile/${id}`}>
             {' '}
             <img className="exitButton" size="20px" src={left} alt="" />{' '}
-          </Link> */}
+          </Link>
         </div>
       </Logo>
       <Container>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Container, Center, Logo } from './styles'
-import left from '../../assets/left.png'
+import { Container, Logo } from './styles'
+import left from '../../assets/arrow-left.png'
 import api from '../../services/api'
 import { useParams } from 'react-router-dom'
 

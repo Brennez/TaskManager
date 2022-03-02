@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { Container, ContentForm, Image, Logo } from './styles'
 import { Form } from '@unform/web'
-import logo from '../../assets/logo.svg'
 import Input from '../../components/input'
 import * as Yup from 'yup'
 import { useContextAutenticacao } from '../../context/autenticacao'

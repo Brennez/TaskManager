@@ -1,10 +1,9 @@
 import React, { useRef } from 'react'
-import { Container, ContentForm, Image, Header } from './styles'
-import logo from '../../assets/logo.svg'
+import { Container, ContentForm, Header } from './styles'
 import { Form } from '@unform/web'
 import Input from '../../components/input'
 import api from '../../services/api'
-import left from '../../assets/left.png'
+// import left from '../../assets/left.png'
 import { Link, useHistory } from 'react-router-dom'
 import { useState } from 'react'
 

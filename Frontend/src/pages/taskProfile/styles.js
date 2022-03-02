@@ -3,8 +3,7 @@ import image from '../../assets/image.svg'
 
 export const Logo = styled.div`
   display: flex;
-  justify-content: center;
-  margin-top: 2rem;
+  justify-content: left;
 `
 
 export const Container = styled.div`

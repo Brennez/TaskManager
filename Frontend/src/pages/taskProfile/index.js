@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Container, ContentForm, Image, Logo } from './styles'
+import { Container, ContentForm, Logo } from './styles'
 import logo from '../../assets/logo.svg'
-import editorIcon from '../../assets/editor.svg'
 import pencil from '../../assets/pencil.png'
-import left from '../../assets/left.png'
+import left from '../../assets/arrow-left.png'
 import api from '../../services/api'
 import { useParams } from 'react-router-dom'
 
@@ -27,7 +26,14 @@ function TaskProfile() {
 
   return (
     <>
-      {/* <Logo></Logo> */}
+      <Logo>
+        <div className="container">
+          <Link to="/Home">
+            {' '}
+            <img className="exitButton" size="20px" src={left} alt="" />{' '}
+          </Link>
+        </div>
+      </Logo>
       <Container>
         <ContentForm ref={referencia}>
           <h1>Minha Tarefa</h1>
