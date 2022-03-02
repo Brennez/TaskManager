@@ -8,7 +8,6 @@ class Tarefa extends Model {
         descricao: Sequelize.STRING,
         tipo: Sequelize.STRING,
         dt_limite: Sequelize.STRING,
-        categoria: Sequelize.STRING,
       },
       {
         sequelize,

@@ -2,14 +2,13 @@ import Tarefa from '../models/Tarefa';
 
 class TaskController {
   async store(req, res) {
-    const { titulo, descricao, tipo, dt_limite, categoria } = req.body;
+    const { titulo, descricao, tipo, dt_limite} = req.body;
 
     const tarefa = await Tarefa.create({
       titulo,
       descricao,
       tipo,
       dt_limite,
-      categoria,
     });
     res.json(tarefa);
   }
@@ -60,18 +59,6 @@ class TaskController {
       res.status(404).json({ erro: 'Essa tarefa nao existe' });
     } else {
       const novo = await tarefa.update({ tipo: tipo });
-      res.json(novo);
-    }
-  }
-
-  async updateCategoria(req, res) {
-    const { categoria } = req.body;
-    const { id } = req.params;
-    const tarefa = await Tarefa.findByPk(id);
-    if (!tarefa) {
-      res.status(404).json({ erro: 'Essa tarefa nao existe' });
-    } else {
-      const novo = await tarefa.update({ categoria: categoria });
       res.json(novo);
     }
   }

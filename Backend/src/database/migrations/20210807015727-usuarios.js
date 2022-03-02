@@ -36,9 +36,6 @@ module.exports = {
     });
   },
 
-  // yarn sequelize db:migrate:undo  --> Desfaz uma migration
-  //yarn sequelize db:migrate:undo:all --> desfaz faz todas as migrations
-
   down: async (queryInterface) => {
     await queryInterface.dropTable('usuarios');
   },

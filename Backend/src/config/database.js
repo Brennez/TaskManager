@@ -1,10 +1,11 @@
+/* eslint-disable prettier/prettier */
 module.exports = {
   dialect: 'postgres',
   host: 'localhost',
   username: 'postgres',
   password: '123456',
-  database: 'MyTasks',
-  port: '5433',
+  database: 'databaseTaskManager',
+  port: '5432',
   define: {
     timestamps: true,
     underscored: true,
