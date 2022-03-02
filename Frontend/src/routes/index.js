@@ -15,7 +15,7 @@ import UTT from '../pages/updateTipo'
 import UD from '../pages/updateData'
 
 // import Update from '../pages/updateNome'
-import BookDeleted from '../pages/bookDeleted'
+import TaskDeleted from '../pages/taskDeleted'
 import taskSearched from '../pages/taskSearched'
 
 // import ControleDeRotas from "./route";
@@ -42,12 +42,7 @@ function Routes() {
         isPrivate={true}
         component={Profile}
       ></ControleRotas>
-      {/* <ControleRotas
-        path="/update"
-        isPrivate={true}
-        exact
-        component={Update}
-      ></ControleRotas> */}
+
       <ControleRotas
         path="/book"
         isPrivate={true}
@@ -55,10 +50,10 @@ function Routes() {
         component={bookList}
       ></ControleRotas>
       <ControleRotas
-        path="/bookDeleted/:id"
+        path="/taskDeleted/:id"
         isPrivate={true}
         exact
-        component={BookDeleted}
+        component={TaskDeleted}
       ></ControleRotas>
       <ControleRotas
         path="/taskSearched"
@@ -79,23 +74,23 @@ function Routes() {
         exact
         component={UNT}
       ></ControleRotas>
-      <ControleRotas 
-      path="/updateDescricaoTarefa/:id" 
-      isPrivate ={true} 
-      exact 
-      component={UDT}
+      <ControleRotas
+        path="/updateDescricaoTarefa/:id"
+        isPrivate={true}
+        exact
+        component={UDT}
       ></ControleRotas>
-      <ControleRotas 
-      path="/updateTipo/:id" 
-      isPrivate ={true} 
-      exact 
-      component={UTT}
+      <ControleRotas
+        path="/updateTipo/:id"
+        isPrivate={true}
+        exact
+        component={UTT}
       ></ControleRotas>
-      <ControleRotas 
-      path="/updateData/:id" 
-      isPrivate ={true} 
-      exact 
-      component={UD}
+      <ControleRotas
+        path="/updateData/:id"
+        isPrivate={true}
+        exact
+        component={UD}
       ></ControleRotas>
     </Switch>
   )

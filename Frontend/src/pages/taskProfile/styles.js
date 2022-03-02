@@ -3,8 +3,7 @@ import image from '../../assets/image.svg'
 
 export const Logo = styled.div`
   display: flex;
-  justify-content: center;
-  margin-top: 2rem;
+  justify-content: left;
 `
 
 export const Container = styled.div`
@@ -204,6 +203,19 @@ export const ContentForm = styled.div`
 
     box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.25);
     transition: background 0.2s;
+  }
+
+  .botao {
+    display: flex;
+    padding: 0.5rem;
+    margin-top: 1.5rem;
+    border-radius: 0.5rem;
+    justify-content: center;
+    background-color: white;
+
+    #texto {
+      color: red;
+    }
   }
 
   .containerSenha .icon {

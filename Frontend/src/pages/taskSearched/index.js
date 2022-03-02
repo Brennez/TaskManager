@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Container, ContentBook, Logo, Body } from './styles'
-// import logo from '../../assets/logo.svg'
-// import left from '../../assets/left.png'
+import left from '../../assets/arrow-left.png'
 import api from '../../services/api'
 import { useParams, useLocation } from 'react-router-dom'
 
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function TaskSearched() {
   const [data, setData] = useState([])
@@ -29,7 +28,7 @@ function TaskSearched() {
         titulo: tarefa.titulo,
         descricao: tarefa.descricao,
         tipo: tarefa.tipo,
-        dt_limite: tarefa.dt_limite,
+        dt_limite: tarefa.dt_limite
       }
     })
 
@@ -42,10 +41,10 @@ function TaskSearched() {
     <>
       <Logo>
         <div className="container">
-          {/* <Link to="/Home">
+          <Link to="/Home">
             {' '}
             <img className="exitButton" size="20px" src={left} alt="" />{' '}
-          </Link> */}
+          </Link>
         </div>
       </Logo>
       <Container>

@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Container, ContentForm, Image, Logo } from './styles'
-import editor from '../../assets/editor.svg'
-import left from '../../assets/left.png'
+import { Container, ContentForm, Logo } from './styles'
+import left from '../../assets/arrow-left.png'
 import api from '../../services/api'
-import { Header } from '../registerTask/styles'
 
 import { Link } from 'react-router-dom'
 
@@ -21,10 +19,10 @@ function Profile() {
     <>
       <Logo>
         <div className="container">
-          {/* <Link to="/Home">
+          <Link to="/Home">
             {' '}
             <img className="exitButton" size="20px" src={left} alt="" />{' '}
-          </Link> */}
+          </Link>
         </div>
       </Logo>
       <Container>
