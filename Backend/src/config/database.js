@@ -4,8 +4,8 @@ module.exports = {
   host: 'localhost',
   username: 'postgres',
   password: '123456',
-  database: 'databaseTaskManager',
-  port: '5432',
+  database: 'MyTasks',
+  port: '5433',
   define: {
     timestamps: true,
     underscored: true,

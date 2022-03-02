@@ -206,6 +206,19 @@ export const ContentForm = styled.div`
     transition: background 0.2s;
   }
 
+  .botao {
+    display: flex;
+    padding: 0.5rem;
+    margin-top: 1.5rem;
+    border-radius: 0.5rem;
+    justify-content: center;
+    background-color: white;
+
+    #texto {
+      color: red;
+    }
+  }
+
   .containerSenha .icon {
     margin-left: 0.5rem;
   }

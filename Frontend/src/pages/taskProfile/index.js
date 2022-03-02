@@ -80,6 +80,11 @@ function TaskProfile() {
               </div>
             </div>
           </div>
+          <div className="botao">
+            <Link id="texto" className="texto" to={`/taskDeleted/${id}`}>
+              Excluir tarefa
+            </Link>
+          </div>
         </ContentForm>
       </Container>
     </>
