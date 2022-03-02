@@ -1,15 +1,15 @@
-# FreezerPoint
+# TaskManager
 
 #Projeto
 
-- FreezerPoint
+- TaskManager
 
 #Resumo
 
 
 #Disciplina
 
-- Programação Web e Engenharia de software
+- Banco de Dados II
 
 #Tecnologias utilizadas
 
