@@ -1,29 +1,27 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useRef } from 'react'
-import { Container, ContentForm, Image, Logo } from './styles'
-import logo from '../../assets/logo.svg'
+import { Container, ContentForm, Logo } from './styles'
 import api from '../../services/api'
 import { Form } from '@unform/web'
 import * as Yup from 'yup'
 import Input from '../../components/input'
-import left from '../../assets/left.png'
-import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
-function UpdateEmail() {
+function UpdateTipoTarefa() {
   const formularioReferencia = useRef(null)
+  const { id } = useParams()
 
   const submeterFormulario = async data => {
     //Valida dos campos do formulário
     try {
       const esquema = Yup.object().shape({
-        novoEmail: Yup.string()
-          .email('Email inválido')
-          .required('Você precisa digitar um email')
+        tipo: Yup.string().required('Você precisa digitar um tipo')
       })
       await esquema.validate(data, { abortEarly: false })
 
       //Faz a requisição da api e grava no banco de dados
-      const response = await api.put('/updateEmail', {
-        novoEmail: data.novoEmail
+      const response = await api.put(`/updateTipo/${id}`, {
+        tipo: data.tipo
       })
       //Atuliza a pagina
       window.location.reload()
@@ -42,8 +40,7 @@ function UpdateEmail() {
   //pegando os dados do backend
   const [data, setData] = useState([])
   useEffect(async () => {
-    console.log('teste')
-    const response = await api.get('/buscaID')
+    const response = await api.get(`/getUmaTarefa/${id}`)
     setData(response.data)
   }, [])
 
@@ -51,27 +48,25 @@ function UpdateEmail() {
     <>
       <Logo>
         <div className="container">
-          <Link to="/perfil">
+          {/* <Link to={`/bookProfile/${id}`}>
             {' '}
             <img className="exitButton" size="20px" src={left} alt="" />{' '}
-          </Link>
-          <img src={logo} alt="icon" />
+          </Link> */}
         </div>
       </Logo>
       <Container>
         <ContentForm>
           <Form ref={formularioReferencia} onSubmit={submeterFormulario}>
-            <h1 className="title">Editar</h1>
-            <h2>Email antigo</h2>
-            <p className="email" href="">
-              {data.email}
-            </p>
-            <h2 className="tituloEmail">Novo Email</h2>
-            <Input
-              name="novoEmail"
-              type="email"
-              placeholder="Digite seu novo email"
-            />
+            <h1 className="title">Editar tipo da tarefa</h1>
+            <div className="container">
+              <h2>Tipo antigo</h2>
+              <p className="titulo" href="">
+                {data.tipo}
+              </p>
+              <h2 className="tituloDoLivro">Novo Tipo</h2>
+              <Input name="tipo" type="text" />
+            </div>
+
             <div className="contentButton">
               <button type="submit" className="botao" id="teste">
                 {' '}
@@ -80,10 +75,9 @@ function UpdateEmail() {
             </div>
           </Form>
         </ContentForm>
-        <Image></Image>
       </Container>
     </>
   )
 }
 
-export default UpdateEmail
+export default UpdateTipoTarefa

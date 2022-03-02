@@ -1,9 +1,9 @@
 {
-    "name": "FeezerPoint",
+    "name": "task_manager",
     "version": "1.0.0",
     "description": "Projeto do curso",
     "main": "index.js",
-    "author": "Alexandre, Manoel e Brenne",
+    "author": "Brenne e Marcela",
     "license": "MIT",
     "scripts": {
         "dev": "nodemon ./src/server.js"
@@ -30,5 +30,5 @@
         "sequelize-cli": "^6.2.0",
         "sucrase": "^3.20.0"
     },
-    "repository": "https://github.com/Alexandre16347/FreezerPoint.git"
+    "repository": "https://github.com/Brennez/TaskManager.git"
 }

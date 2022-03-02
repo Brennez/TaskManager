@@ -10,6 +10,9 @@ import ControleRotas from './route'
 import bookList from '../pages/bookList'
 
 import UNT from '../pages/updateNomeTarefa'
+import UDT from '../pages/updateDescricao'
+import UTT from '../pages/updateTipo'
+import UD from '../pages/updateData'
 
 // import Update from '../pages/updateNome'
 import BookDeleted from '../pages/bookDeleted'
@@ -75,6 +78,24 @@ function Routes() {
         isPrivate={true}
         exact
         component={UNT}
+      ></ControleRotas>
+      <ControleRotas 
+      path="/updateDescricaoTarefa/:id" 
+      isPrivate ={true} 
+      exact 
+      component={UDT}
+      ></ControleRotas>
+      <ControleRotas 
+      path="/updateTipo/:id" 
+      isPrivate ={true} 
+      exact 
+      component={UTT}
+      ></ControleRotas>
+      <ControleRotas 
+      path="/updateData/:id" 
+      isPrivate ={true} 
+      exact 
+      component={UD}
       ></ControleRotas>
     </Switch>
   )

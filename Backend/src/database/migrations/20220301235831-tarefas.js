@@ -19,10 +19,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      categoria: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
       dt_limite: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -37,9 +33,6 @@ module.exports = {
       },
     });
   },
-
-  // yarn sequelize db:migrate:undo  --> Desfaz uma migration
-  //yarn sequelize db:migrate:undo:all --> desfaz faz todas as migrations
 
   down: async (queryInterface) => {
     await queryInterface.dropTable('tarefas');

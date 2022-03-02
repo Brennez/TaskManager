@@ -97,14 +97,14 @@ function Home() {
 
         <ContentBook ref={referencia}>
           {data.map(item => {
-            const { titulo, descricao, tipo, dt_limite, categoria, id } = item
+            const { titulo, descricao, tipo, dt_limite, id } = item
             return (
               <div className="item">
                 <div className="info">
                   <p className="titulo"> Título: {titulo}</p>
                   <p className="descricao"> Descrição: {descricao}</p>
                   <p className="data"> Data: {dt_limite}</p>
-                  <p className="categoria"> Categoria: {categoria}</p>
+                  <p className="categoria"> Tipo: {tipo}</p>
                   <div className="botao">
                     <Link className="texto" to={`/TaskProfile/${id}`}>
                       Editar

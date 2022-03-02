@@ -30,7 +30,6 @@ function TaskSearched() {
         descricao: tarefa.descricao,
         tipo: tarefa.tipo,
         dt_limite: tarefa.dt_limite,
-        categoria: tarefa.categoria
       }
     })
 
@@ -54,7 +53,7 @@ function TaskSearched() {
           <h1 className="title">Tarefas encontradas</h1>
           <ContentBook ref={referencia}>
             {data.map(item => {
-              const { titulo, descricao, tipo, dt_limite, categoria } = item
+              const { titulo, descricao, tipo, dt_limite } = item
               return (
                 <div className="item">
                   <p> Título: {titulo}</p>
@@ -62,7 +61,6 @@ function TaskSearched() {
                     <p className="titulo"> Descrição: {descricao}</p>
                     <p className="autor"> Tipo: {tipo}</p>
                     <p className="autor"> Data limite: {dt_limite}</p>
-                    <p className="autor"> Categoria: {categoria}</p>
                     <div className="botao">
                       {/* <Link to={`/cartList/${id}`}>Adicionar</Link> */}
                     </div>

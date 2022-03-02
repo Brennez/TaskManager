@@ -1,15 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Container, ContentForm, Image, Logo } from './styles'
-import logo from '../../assets/logo.svg'
+import { Container, ContentForm, Logo } from './styles'
 import api from '../../services/api'
 import { Form } from '@unform/web'
 import * as Yup from 'yup'
 import Input from '../../components/input'
-import left from '../../assets/left.png'
-import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 
-function UpdateEdicao() {
+function UpdateDescricaoTarefa() {
   const formularioReferencia = useRef(null)
   const { id } = useParams()
 
@@ -17,13 +14,13 @@ function UpdateEdicao() {
     //Valida dos campos do formulário
     try {
       const esquema = Yup.object().shape({
-        edicao: Yup.string().required('Você precisa digitar uma edição')
+        descricao: Yup.string().required('Você precisa digitar uma descrição')
       })
       await esquema.validate(data, { abortEarly: false })
 
       //Faz a requisição da api e grava no banco de dados
-      const response = await api.put(`/updateEdicao/${id}`, {
-        edicao: data.edicao
+      const response = await api.put(`/updateDescricao/${id}`, {
+        descricao: data.titulo
       })
       //Atuliza a pagina
       window.location.reload()
@@ -42,7 +39,7 @@ function UpdateEdicao() {
   //pegando os dados do backend
   const [data, setData] = useState([])
   useEffect(async () => {
-    const response = await api.get(`/getUmLivro/${id}`)
+    const response = await api.get(`/getUmaTarefa/${id}`)
     setData(response.data)
   }, [])
 
@@ -50,27 +47,25 @@ function UpdateEdicao() {
     <>
       <Logo>
         <div className="container">
-          <Link to={`/bookProfile/${id}`}>
+          {/* <Link to={`/bookProfile/${id}`}>
             {' '}
             <img className="exitButton" size="20px" src={left} alt="" />{' '}
-          </Link>
-          <img src={logo} alt="icon" />
+          </Link> */}
         </div>
       </Logo>
       <Container>
         <ContentForm>
           <Form ref={formularioReferencia} onSubmit={submeterFormulario}>
-            <h1 className="title">Editar</h1>
-            <h2>Edição antiga</h2>
-            <p className="edicao" href="">
-              {data.edicao}
-            </p>
-            <h2 className="tituloDaEdicao">Novo Edição</h2>
-            <Input
-              name="edicao"
-              type="number"
-              placeholder="Digite uma nova edição"
-            />
+            <h1 className="title">Editar descrição da tarefa</h1>
+            <div className="container">
+              <h2>Descrição antiga</h2>
+              <p className="descricao" href="">
+                {data.descricao}
+              </p>
+              <h2 className="descricaoDaTarefa">Nova Descrição</h2>
+              <Input name="descricao" type="text" />
+            </div>
+
             <div className="contentButton">
               <button type="submit" className="botao" id="teste">
                 {' '}
@@ -79,10 +74,9 @@ function UpdateEdicao() {
             </div>
           </Form>
         </ContentForm>
-        <Image></Image>
       </Container>
     </>
   )
 }
 
-export default UpdateEdicao
+export default UpdateDescricaoTarefa

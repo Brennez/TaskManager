@@ -14,7 +14,6 @@ routes.get('/getUmaTarefa/:id', TC.getId);
 routes.put('/updateTituloTarefa/:id', autenticacao, TC.update);
 routes.put('/updateDescricao/:id', autenticacao, TC.updateDescricao);
 routes.put('/updateTipo/:id', autenticacao, TC.updateTipo);
-routes.put('/updateCategoria/:id', autenticacao, TC.updateCategoria);
 routes.put('/updateDataLimite/:id', autenticacao, TC.updateDtLimite);
 routes.delete('/deleteTask/:id', TC.deleteTask);
 

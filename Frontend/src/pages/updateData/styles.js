@@ -7,13 +7,12 @@ export const Logo = styled.div`
     display: flex;
   }
 `
-
 export const Container = styled.div`
   display: flex;
+  justify-content: center;
   height: 100vh;
   margin-left: 2rem;
 `
-
 export const ContentForm = styled.div`
   display: flex;
   flex-direction: column;
@@ -21,6 +20,12 @@ export const ContentForm = styled.div`
   width: 100%;
   max-width: 500px;
   margin-right: 5rem;
+
+  .container {
+    background-color: #461f69;
+    padding: 4rem;
+    border-radius: 0.5rem;
+  }
 
   h1 {
     margin-bottom: 1rem;
@@ -30,15 +35,30 @@ export const ContentForm = styled.div`
   }
 
   h2 {
-    color: rgba(32, 32, 40, 0.8);
+    color: white;
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
   }
-  .tituloEmail {
+  .tituloDoLivro {
     margin-top: 1rem;
   }
 
-  .email {
+  .nome {
+    font-family: 'Nunito', sans-serif;
+    border-radius: 5rem;
+    border-color: #6c70ef;
+    margin-bottom: 1rem;
+    border: none;
+    outline: none;
+    background: #6c70ef;
+    color: white;
+    padding: 0.5rem;
+    padding-right: 50%;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.25);
+    transition: background 0.2s;
+  }
+
+  .titulo {
     font-family: 'Nunito', sans-serif;
     border-radius: 5rem;
     border-color: #6c70ef;
@@ -50,6 +70,20 @@ export const ContentForm = styled.div`
     padding: 0.5rem;
     padding-right: 33%;
 
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.25);
+    transition: background 0.2s;
+  }
+
+  .senha {
+    font-family: 'Nunito', sans-serif;
+    border-radius: 5rem;
+    border-color: #6c70ef;
+    border: none;
+    outline: none;
+    background: #6c70ef;
+    color: white;
+    padding: 0.5rem;
+    padding-right: 50%;
     box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.25);
     transition: background 0.2s;
   }
@@ -67,7 +101,7 @@ export const ContentForm = styled.div`
     margin-bottom: 1rem;
     border: none;
     outline: none;
-    background: #9ba0fc;
+    background: #461f69;
     color: white;
     padding: 0.5rem;
     padding-right: 40%;
@@ -79,7 +113,7 @@ export const ContentForm = styled.div`
   }
 
   button:hover {
-    background: ${shade(0.1, '#9ba0fc')};
+    background: ${shade(0.1, '#461f69')};
   }
 `
 

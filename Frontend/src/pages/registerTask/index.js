@@ -66,8 +66,6 @@ function RegisterTask() {
             <Input name="tipo" type="text" />
             <h2>Data Limite</h2>
             <Input name="dt_limite" type="text" />
-            <h2>Categoria</h2>
-            <Input name="categoria" type="text" />
 
             <button type="submit"> Adicionar </button>
           </Form>
