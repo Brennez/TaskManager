@@ -20,7 +20,7 @@ function UpdateDescricaoTarefa() {
 
       //Faz a requisição da api e grava no banco de dados
       const response = await api.put(`/updateDescricao/${id}`, {
-        descricao: data.titulo
+        descricao: data.descricao
       })
       //Atuliza a pagina
       window.location.reload()
