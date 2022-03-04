@@ -55,8 +55,6 @@ function Register() {
         <ContentForm>
           <h1 className="title">Bem vindo</h1>
           <Form ref={formularioReferencia} onSubmit={submeterFormulario}>
-            <p>Preencha seus dados para realizar seu login</p>
-
             <h2>Email</h2>
             <Input name="email" type="text" placeholder="exemplo@gmail.com" />
             <h2>Senha</h2>

@@ -52,7 +52,7 @@ function Register() {
       <ContentForm>
         <h1 className="title">Bem vindo</h1>
         <Form ref={formularioReferencia} onSubmit={submeterFormulario}>
-          <p>Preencha seus dados para cadastrar</p>
+          <p>Preencha os campos para cadastrar</p>
           <h2>Nome</h2>
           <Input name="nome" type="text" placeholder="Nome" />
           <h2>Email</h2>

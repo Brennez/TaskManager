@@ -21,9 +21,6 @@ export const Header = styled.div`
   }
 
   .searchInput {
-    border-top: none;
-    border-left: none;
-    border-right: none;
     background-color: #dfddda;
   }
 
@@ -80,6 +77,7 @@ export const Body = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     h2 {
       color: #461f69;
       font-size: 1.563rem;

@@ -68,7 +68,6 @@ function Home() {
           <li>
             <Link to="/perfil">
               <a> Perfil</a>
-              {/* <img src={avatar} alt="" /> */}
             </Link>
           </li>
           <li>
@@ -80,7 +79,7 @@ function Home() {
             <img src={iconSearch} alt="" />
             <input
               type="text"
-              placeholder="Buscar..."
+              placeholder="Pesquisar tarefa..."
               class="searchInput"
               name="mySearch"
             />
@@ -88,10 +87,9 @@ function Home() {
         </ul>
       </Header>
       <Body>
-        <Container></Container>
         {/* =========== CABEÇALHO DE LIVROS ============ */}
         <div className="cabecalho">
-          <h2>Suas Tarefas</h2>
+          <h2 id="title">Minhas Tarefas</h2>
           <ul className="elementos"></ul>
         </div>
 
