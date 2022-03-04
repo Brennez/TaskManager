@@ -35,18 +35,6 @@ function Home() {
     setData(response.data)
   }, [])
 
-  const handleLeftClick = e => {
-    e.preventDefault()
-    console.log(referencia.current.offsetWidth)
-    referencia.current.scrollLeft -= referencia.current.offsetWidth
-  }
-
-  const handleRightClick = e => {
-    e.preventDefault()
-    console.log(referencia.current.offsetWidth)
-    referencia.current.scrollLeft += referencia.current.offsetWidth
-  }
-
   //teste
   if (!data)
     return (
@@ -115,36 +103,6 @@ function Home() {
           {/* =========== FECHAMENTO DO MAP ============ */}
         </ContentBook>
       </Body>
-      <Direction>
-        <div className="container">
-          <button onClick={handleLeftClick} className="right">
-            {' '}
-            <img src={left} alt="" />
-          </button>
-          <button onClick={handleRightClick} className="left">
-            {' '}
-            <img src={right} alt="" />
-          </button>
-        </div>
-      </Direction>
-
-      <Footer>
-        <div className="container">
-          <p className="nome">
-            UESPI, Campus
-            <br />
-            Piripiri
-          </p>
-          <p className="numero">
-            (86) 4002-8922
-            <br />
-            Fale conosco
-          </p>
-          <a href="https://github.com/Brennez/TaskManager">
-            <img src={git} alt="" height={100} width={100} />
-          </a>
-        </div>
-      </Footer>
     </>
   )
 }
